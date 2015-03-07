@@ -14,5 +14,14 @@ test01.exe: 01.exe
 
 .PHONY: test01.exe
 
+02.exe: 02.o
+	$(CXX) $^ -o $@
+
+03.exe: 03.o
+	$(CXX) $^ -o $@
+
+04.exe: 04.o
+	$(CXX) $^ -o $@
+
 clean:
 	rm -rf *.o *.exe
