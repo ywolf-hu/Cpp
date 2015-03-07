@@ -23,5 +23,8 @@ test01.exe: 01.exe
 04.exe: 04.o
 	$(CXX) $^ -o $@
 
+05.exe: 05.o
+	$(CXX) $^ -o $@
+
 clean:
 	rm -rf *.o *.exe
