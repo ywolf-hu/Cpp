@@ -1,5 +1,5 @@
 TestSuiteDir=../../TestSuite
-CXXFLAGS += -I$(TestSuiteDir)
+CXXFLAGS += -I$(TestSuiteDir) -g
 
 all: test01.exe
 
@@ -30,6 +30,9 @@ test01.exe: 01.exe
 	$(CXX) $^ -o $@
 
 07.exe: 07.o
+	$(CXX) $^ -o $@
+
+08.exe: 08.o
 	$(CXX) $^ -o $@
 
 clean:

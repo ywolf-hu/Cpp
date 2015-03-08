@@ -22,23 +22,25 @@ private:
   string m_str;
 };
 
+bool isPalindromeWord(string word)
+{
+    RevertString revertString(word);
+    revertString.convert();
+    string convertedWord = revertString.get();
+    for(size_t i=0; i != word.length(); i++){
+      if (toupper(word[i]) != toupper(convertedWord[i])){
+      return false;
+      }
+    }
+    return true;
+}
 
 int main()
 {
   string inputWord;
-  bool palindromeFlag = true;
   cout << "Please input word: "<< endl;
   while(cin >> inputWord) {
-    RevertString revertString(inputWord);
-    revertString.convert();
-    string convertedWord = revertString.get();
-    for(size_t i=0; i != inputWord.length(); i++){
-      if (toupper(inputWord[i]) != toupper(convertedWord[i])){
-        palindromeFlag = false;
-        break;
-      }
-    }
-    if(true == palindromeFlag){
+    if(true == isPalindromeWord(inputWord)){
       cout << inputWord << " is palindrome" << endl;
     }
     else {
