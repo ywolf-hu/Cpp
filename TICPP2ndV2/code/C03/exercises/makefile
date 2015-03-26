@@ -1,5 +1,6 @@
 TestSuiteDir=../../TestSuite
 CXXFLAGS += -I$(TestSuiteDir) -g
+CXX = clang++
 
 all: test01.exe
 
